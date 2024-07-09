@@ -1,0 +1,65 @@
+﻿@model IEnumerable<proyectoscrum.Models.CentrosEducativo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreCentro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cantone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Distrito)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdProvinciaNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdTipoNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreCentro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cantone.IdCanton)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Distrito.IdDistrito)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdProvinciaNavigation.IdProvincia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdTipoNavigation.IdTipo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdCentro">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdCentro">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdCentro">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

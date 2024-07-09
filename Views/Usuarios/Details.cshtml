@@ -1,0 +1,83 @@
+﻿@model proyectoscrum.Models.Usuario
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="product-container">
+                <img class="img-size" src="~/images/aula.jpg" />
+            </div>
+            <div class="product-container margin-container">
+                <img class="img-size" src="~/images/salonconpizarra.jpg" />
+            </div>
+            <div class="product-container margin-container">
+                <img class="img-size" src="~/images/biblioteca.jpeg" />
+            </div>
+        </div>
+        <div class="col-md-4 margin-detalle border-create">
+            <h2><b>Detalles Usuario</b></h2>
+            <dl class="row">
+                <dt class="col-sm-5">
+                    Identificación
+                </dt>
+                <dd class="col-sm-7">
+                    @Html.DisplayFor(model => model.Identificacion)
+                </dd>
+                <dt class="col-sm-5">
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
+                <dd class="col-sm-7">
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
+                <dt class="col-sm-5">
+                    Primer Apellido
+                </dt>
+                <dd class="col-sm-7">
+                    @Html.DisplayFor(model => model.Apellido1)
+                </dd>
+                <dt class="col-sm-5">
+                    Segundo Apellido
+                </dt>
+                <dd class="col-sm-7">
+                    @Html.DisplayFor(model => model.Apellido2)
+                </dd>
+                <dt class="col-sm-5">
+                    Contraseña
+                </dt>
+                <dd class="col-sm-7">
+                    @Html.DisplayFor(model => model.Contrasenna)
+                </dd>
+                <dt class="col-sm-5">
+                    @Html.DisplayNameFor(model => model.Correo)
+                </dt>
+                <dd class="col-sm-7">
+                    @Html.DisplayFor(model => model.Correo)
+                </dd>
+                <dt class="col-sm-5">
+                    Teléfono
+                </dt>
+                <dd class="col-sm-7">
+                    @Html.DisplayFor(model => model.Telefono)
+                </dd>
+                <dt class="col-sm-5">
+                    Fecha de Nacimiento
+                </dt>
+                <dd class="col-sm-7">
+                    @Html.DisplayFor(model => model.FechaNacimiento)
+                </dd>
+                <dt class="col-sm-5">
+                    Tipo Rol
+                </dt>
+                <dd class="col-sm-7">
+                    @Html.DisplayFor(model => model.IdRolNavigation.IdRol)
+                </dd>
+            </dl>
+            <br />
+            <div>
+                <a class="btn btn-grande btn-style" asp-action="Index">Usuarios</a>
+            </div>
+        </div>
+    </div>
+</div>

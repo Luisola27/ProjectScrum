@@ -1,0 +1,81 @@
+﻿@model IEnumerable<proyectoscrum.Models.Grupo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1><b>Gestión de Grupos</b></h1>
+<br />
+
+
+<div class="container">
+    <form asp-action="Search" method="get">
+        <img class="logo-create" src="~/images/lupa.jpeg" />
+        <label><b>Buscar:</b></label>
+        <input class="label-size" type="text" name="busqueda" />
+        <button class="btn btn-buscar btn-style" type="submit">Buscar</button>
+    </form>
+</div>
+<br />
+
+@if (User.IsInRole("1") || User.IsInRole("2"))
+{
+    <div class="container">
+        <a class="btn btn-create" asp-action="Create"><img class="logo-create" src="~/images/usuaio.png" />Nuevo</a>
+    </div>
+}
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombre Grupo
+            </th>
+            <th>
+                Centro Educativo
+            </th>
+            <th>
+                Nivel
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreGrupo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdCentroNavigation.IdCentro)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdNivelNavigation.IdNivel)
+                </td>
+                @if (User.IsInRole("1") || User.IsInRole("2"))
+                {
+                    <td>
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item">
+
+                                <a class="btn btn-index btn-style" asp-action="Edit" asp-route-id="@item.IdGrupo">Editar</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn btn-index btn-style" asp-action="Details" asp-route-id="@item.IdGrupo">Detalles</a>
+                            </li>
+                        </ul>
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br />
+<br />
+<div>
+    <a asp-action="Index">Gestión de Grupos</a>
+</div>

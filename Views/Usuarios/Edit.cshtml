@@ -1,0 +1,89 @@
+﻿@model proyectoscrum.Models.Usuario
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="product-container">
+            <img class="img-size" src="~/images/aula.jpg" />
+        </div>
+        <div class="product-container margin-container">
+            <img class="img-size" src="~/images/salonconpizarra.jpg" />
+        </div>
+        <div class="product-container margin-container">
+            <img class="img-size" src="~/images/biblioteca.jpeg" />
+        </div>
+    </div>
+    <div class="col-md-4 margin-registro border-create">
+        <h2><b>Editar Usuario</b></h2>
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdUsuario" />
+            <div class="form-group">
+                <label asp-for="Identificacion" class="control-label">Identificación</label>
+                <input asp-for="Identificacion" class="form-control" />
+                <span asp-validation-for="Identificacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apellido1" class="control-label">Primer Apellido</label>
+                <input asp-for="Apellido1" class="form-control" />
+                <span asp-validation-for="Apellido1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apellido2" class="control-label">Segundo Apellido</label>
+                <input asp-for="Apellido2" class="form-control" />
+                <span asp-validation-for="Apellido2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contrasenna" class="control-label">Contraseña </label>
+                <input asp-for="Contrasenna" class="form-control" />
+                <span asp-validation-for="Contrasenna" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Correo" class="control-label"></label>
+                <input asp-for="Correo" class="form-control" />
+                <span asp-validation-for="Correo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefono" class="control-label">Teléfono</label>
+                <input asp-for="Telefono" class="form-control" />
+                <span asp-validation-for="Telefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaNacimiento" class="control-label">Fecha de Nacimiento</label>
+                <input asp-for="FechaNacimiento" class="form-control" />
+                <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdRolNavigation" class="control-label">Tipo Rol</label>
+                <input asp-for="IdRolNavigation" class="form-control" />
+                <span asp-validation-for="IdRolNavigation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-grande btn-style" />
+            </div>
+            <br />
+            <br />
+            <br />
+            <div>
+                <a asp-action="Index">Gestión de Usuarios</a>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

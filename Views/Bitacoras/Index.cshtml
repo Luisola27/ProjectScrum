@@ -1,0 +1,47 @@
+﻿@model IEnumerable<proyectoscrum.Models.Bitacora>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Bitacora</h1>
+
+<p>
+    <a asp-action="Create">Crear nueva</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Accion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Afectado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaHora)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Accion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Afectado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaHora)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdBitacora">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.IdBitacora">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdBitacora">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

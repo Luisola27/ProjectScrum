@@ -1,0 +1,53 @@
+﻿@model IEnumerable<proyectoscrum.Models.EstudiantesGrupo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdNota)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notafinal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdGrupoNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdUsuarioNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdNota)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notafinal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdGrupoNavigation.IdGrupo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdUsuarioNavigation.IdUsuario)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdEstudianteGrupo">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdEstudianteGrupo">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdEstudianteGrupo">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

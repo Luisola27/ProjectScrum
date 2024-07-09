@@ -1,0 +1,404 @@
+/* Basic reset for padding and margin */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+/*Originales*/
+
+body {
+    font-family: 'roboto-regular', sans-serif;
+    background-color: white;
+    margin-bottom: 25px;
+}
+
+@font-face {
+    font-family: 'roboto-regular';
+    src: url('../fonts/roboto-regular.ttf') format('truetype');
+}
+
+.label-size {
+    width: 850px;
+}
+
+.label-color {
+    background-color: #9edbal;
+}
+
+/*Header*/
+
+.navbar {
+    background-color: #2d7895;
+    color: white;
+    font-size: 18px;
+}
+
+nav {
+    color:white !important;
+}
+
+.navbar-item{
+    color: aliceblue;
+    font-size: 18px;
+}
+
+a {
+    color:white;
+}
+
+.margin-detalle {
+    margin-top: 350px;
+}
+
+
+.logo-mep {
+    width: 20px;
+    height: 22px;
+}
+
+.btn-index {
+    height: 42px;
+    width: 78px;
+    font-size: 15px;
+}
+
+.logo-size {
+    height: 30px;
+    width: 38px;
+}
+
+.logo-home {
+    width: 220px;
+    height: 200px;
+}
+
+.table-emergente {
+    width: 300px;
+
+}
+
+thead {
+    color: white;
+    background-color: #1d334a;
+    text-align: center;
+}
+
+tr {
+    font-size: 15px;
+}
+
+    tr:hover {
+        background-color: #b6b6bb;
+    }
+
+tbody {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 4;
+}
+
+.margin-registro {
+    margin-top: 135px;
+}
+
+.border-create {
+    border-left: solid;
+    border-color: black;
+    border-width: 2px;
+    height: 500px;
+}
+
+.img-index {
+    height: 700px;
+    width: 380px;
+}
+
+
+.border-left {
+    border-left: solid;
+    border-color: black;
+    border-width: 2px;
+    padding-left: 20px;
+}
+
+.product-container {
+    position: relative;
+    overflow: hidden;
+}
+.product-details {
+    position: absolute;
+    bottom: 25px;
+    left: 50px;
+    z-index: 9000;
+}
+.product-container img {
+    -moz-transition: all 0.8s;
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s;
+}
+
+.product-container:hover img {
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.img-size {
+    width: 650px;
+    height: 350px;
+}
+
+.img-margin {
+    margin-top: 80px;
+}
+
+.margin-container {
+    margin-top: 10px;
+}
+
+.top-margin {
+    margin-top: 450px;
+}
+
+.btn-grande {
+    height: 52px;
+    width: 105px;
+    font-size: 18px;
+    float: right;
+}
+
+.btn-style {
+    color: #102c54;
+    border-radius: 10%;
+    background-color: none;
+    border-color: #102c54;
+    border-width: medium;
+}
+
+.btn-create {
+    color: white;
+    border-radius: 10%;
+    background-color: #3f888f;
+    border-color: #E0B8B1;
+    border-width: medium;
+    height: 52px;
+    width: 125px;
+    font-size: 18px;
+}
+
+
+.btn-style:hover {
+        background-color: #007556;
+}
+
+h1 {
+    color: black;
+    font-size: 48px;
+}
+
+h2 {
+    color: black;
+    font-size: 32px;
+}
+
+h4 {
+    color:white;
+    font-size: 25px;
+}
+
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+
+nav {
+    background-color: #26252d;
+    color: white;
+    font-size: 18px;
+}
+
+.navbar-nav :hover {
+    background-color: #3f888f;
+}
+
+.logo-create {
+    width: 20px;
+    height: 20px;
+}
+
+.logo-mep {
+    width: 20px;
+    height: 22px;
+}
+
+
+.btn-index {
+    height: 42px;
+    width: 78px;
+    font-size: 15px;
+}
+
+.logo-size {
+    height: 30px;
+    width: 38px;
+}
+
+thead {
+    color: white;
+    background-color: #1d334a;
+    text-align: center;
+}
+
+
+tbody {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 4;
+}
+
+.margin-registro {
+    margin-top: 135px;
+}
+
+.border-create {
+    border-left: solid;
+    border-color: black;
+    border-width: 2px;
+    height: 500px;
+}
+
+.img-index{
+    height: 600px;
+    width: 400px;
+}
+
+.img-detalles{
+height: 300px;
+width: 400px;
+}
+
+/* Footer */
+
+footer {
+    background-color: #E2E1DE;
+    font-size: 16px;
+    padding-left: 300px;
+}
+
+.redes-logo {
+    height: 24px;
+    width: 24px;
+}
+
+    /* Button styles */
+    a.asp-action {
+        display: inline-block;
+        padding: 8px 15px;
+        margin: 5px;
+        background-color: #007bff;
+        color: white;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+     a.asp-action:hover {
+           background-color: #0056b3;
+        }
+
+/* General link styling */
+.action-link {
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+/* Specific styles for Edit, Details, and Delete actions */
+.edit-action {
+    background-color: #ffc107; /* Amber */
+}
+
+.details-action {
+    background-color: #17a2b8; /* Light blue */
+}
+
+.delete-action {
+    background-color: #dc3545; /* Red */
+}
+
+/* Hover effect for all action links */
+.action-link:hover {
+    opacity: 0.8;
+}
+
+/* General form styling */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+    .form-control:focus {
+        color: #495057;
+        background-color: #fff;
+        border-color: #80bdff;
+        outline: 0;
+        box-shadow: 0 0 0 .2rem rgba(0,123,255,.25);
+    }
+
+/* Styling labels for better readability */
+label.control-label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-weight: bold;
+}
+
+/* Custom button styling */
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+    .btn-primary:hover {
+        color: #fff;
+        background-color: #0069d9;
+        border-color: #0062cc;
+    }
+
+/* Styling for validation error messages */
+.text-danger {
+    color: #dc3545;
+}
+
+/* Additional styling for the 'Back to List' link */
+.back-to-list {
+    display: inline-block;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #007bff;
+    text-decoration: none;
+}
+
+    .back-to-list:hover {
+        text-decoration: underline;
+    }

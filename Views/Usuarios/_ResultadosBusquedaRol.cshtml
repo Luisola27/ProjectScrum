@@ -1,0 +1,28 @@
+﻿@model List<proyectoscrum.Models.Role>
+
+    <table class="table-emergente">
+        <thead>
+            <tr>
+                <th>ID Rol</th>
+                <th>Nombre</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var rol in Model)
+            {
+                <tr data-rol-id="@rol.IdRol" onclick="buscarRolSeleccionado('@rol.IdRol')">
+                    <td>@rol.IdRol</td>
+                    <td>@rol.NombreRol</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <script>
+        function buscarRolSeleccionado(IdRol) {
+            // Asignar el valor del ID al textbox del View principal
+            $('#IdRol').val(IdRol);
+            // Cerrar el popup
+            $('#ventana-emergente').dialog('close');
+        }
+    </script>

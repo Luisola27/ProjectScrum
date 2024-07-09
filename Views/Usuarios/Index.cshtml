@@ -1,0 +1,109 @@
+﻿@model IEnumerable<proyectoscrum.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1><b>Gestión de Usuarios</b></h1>
+<br />
+
+<div class="container">
+    <form asp-action="Search" method="get">
+        <img class="logo-create" src="~/images/lupa.jpeg" />
+        <label><b>Buscar:</b></labe>
+        <input class="label-size label-color" type="text" name="busqueda" />
+        <button class="btn btn-buscar btn-style" type="submit">Buscar</button>
+    </form>
+</div>
+<br />
+<div class="container">
+    <a class="btn btn-create" asp-action="Create"><img class="logo-create" src="~/images/usuaio.png" />Nuevo</a>
+</div>
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Identificación
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                Primer Apellido
+            </th>
+            <th>
+                Segundo Apellido
+            </th>
+            <th>
+                Contraseña
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Correo)
+            </th>
+            <th>
+                Teléfono
+            </th>
+            <th>
+                Fecha de Nacimiento
+            </th>
+            <th>
+                Tipo Rol
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Identificacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellido1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellido2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Contrasenna)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Correo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefono)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaNacimiento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdRolNavigation.IdRol)
+                </td>
+                <td>
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item">
+
+                            <a class="btn btn-index btn-style" asp-action="Edit" asp-route-id="@item.IdUsuario">Editar</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="btn btn-index btn-style" asp-action="Details" asp-route-id="@item.IdUsuario">Detalles</a>
+                        </li>
+                    </ul>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br />
+<br />
+<div>
+    <a asp-action="Index">Gestión de Usuarios</a>
+</div>

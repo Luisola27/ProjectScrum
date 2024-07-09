@@ -1,0 +1,55 @@
+﻿@model proyectoscrum.Models.Usuario;
+
+<div class="row">
+    <div class="col-md-8 img-margin">
+        <div class="product-container">
+            <img class="img-size" src="~/images/graduaciones.jpeg" />
+        </div>
+        <div class="product-container margin-container">
+            <img class="img-size" src="~/images/congreso.jpeg" />
+        </div>
+        <div class="product-container margin-container">
+            <img class="img-size" src="~/images/lapices.jpeg" />
+        </div>
+    </div>
+ 
+    <div class="col-md-4">
+       
+        <div class="border-left top-margin">
+            <h1><b>Iniciar Sesión</b></h1>
+            <h2><b>Sistemas de Notas MEP</b></h2>
+         
+
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                        {
+                            <li>@error.ErrorMessage</li>
+                        }
+                    </ul>
+                </div>
+            }
+            <form asp-action="Login">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Correo" class="control-label"></label>
+                    <input asp-for="Correo" class="form-control label-color" />
+                    <span asp-validation-for="Correo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Contrasenna" class="control-label"></label>
+                    <input asp-for="Contrasenna" class="form-control label-color" type="password" />
+                    <span asp-validation-for="Contrasenna" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group">
+                    <input type="submit" value="Login" class="btn btn-grande btn-style" />
+                </div>
+                <br />
+            </form>
+
+        </div>
+    </div>
+</div>

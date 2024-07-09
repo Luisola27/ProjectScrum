@@ -1,0 +1,45 @@
+﻿@model proyectoscrum.Models.Usuario;
+
+<div class="row">
+    <div class="col-md-6 top-margin text-center">
+        <h1><b>Sistema de Notas MEP</b></h1>
+
+    </div>
+
+    <div class="col-md-6 border-left top-margin">
+        <h1><b>Iniciar Sesión</b></h1>
+
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <div class="alert alert-danger" role="alert">
+                <ul>
+                    @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                    {
+                        <li>@error.ErrorMessage</li>
+                    }
+                </ul>
+            </div>
+        }
+        <form asp-action="Login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Correo" class="control-label"></label>
+                <input asp-for="Correo" class="form-control label-login" />
+                <span asp-validation-for="Correo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contrasenna" class="control-label"></label>
+                <input asp-for="Contrasenna" class="form-control label-login" type="password" />
+                <span asp-validation-for="Contrasenna" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-grande btn-style" />
+            </div>
+            <br />
+            <p>¿No tienes una cuenta? <a asp-controller="Account" asp-action="Register">Regístrate</a></p>
+        </form>
+
+    </div>
+</div>
+
